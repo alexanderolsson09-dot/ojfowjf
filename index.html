@@ -737,8 +737,8 @@
       ];
 
       const gallery = [
-        { caption: 'Regatta Weekend', src: './images/gallery-1.svg' },
-        { caption: 'Performance Session', src: './images/gallery-2.svg' },
+        { caption: 'Regatta Weekend', src: './images/IMG_3951.JPG' },
+        { caption: 'Performance Session', src: './images/hero-sailing.svg' },
         { caption: '29er Class Training', src: './images/gallery-3.svg' },
         { caption: 'Race Day Preparation', src: './images/gallery-4.svg' },
         { caption: 'On-Water Execution', src: './images/gallery-5.svg' },
@@ -781,7 +781,7 @@
           .map(
             (item) => `
           <figure class="card gallery-item">
-            <img src="${item.src}" alt="${item.caption}" loading="lazy" />
+            <img src="${item.src}" alt="${item.caption}" loading="lazy" onerror="this.src='./images/hero-sailing.svg'" />
             <figcaption>${item.caption}</figcaption>
           </figure>
         `,

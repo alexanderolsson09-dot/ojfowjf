@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-slate-800 antialiased;
+  background: linear-gradient(180deg, #f8fafc 0%, #f3f7fa 100%);
+}
+
+.section-shell {
+  @apply mx-auto max-w-6xl px-6 py-20 md:px-10;
+}
+
+.section-title {
+  @apply text-3xl font-semibold tracking-tight text-navy-900 md:text-4xl;
+}
+
+.section-subtitle {
+  @apply mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base;
+}

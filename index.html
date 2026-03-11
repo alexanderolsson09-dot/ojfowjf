@@ -8,9 +8,148 @@
       content="Alexander Olsson — Swedish elite sailor with international 29er regatta experience and a high-performance mindset."
     />
     <title>Alexander Olsson | Elite Sailor</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="bg-slate-50">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a href="#top" class="brand" data-text="brand">ALEXANDER OLSSON</a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#sponsorship">Sponsorship</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-full">
+        <div class="hero-overlay"></div>
+        <img class="hero-image" id="hero-image" src="./images/hero-sailing.svg" alt="Alexander racing at sea" loading="eager" />
+        <div class="container hero-content fade-up">
+          <p class="eyebrow" data-text="heroEyebrow">Swedish Elite Sailing Portfolio</p>
+          <h1 data-text="heroName">Alexander Olsson</h1>
+          <p class="hero-title" data-text="heroTitle">Competitive 29er Sailor · International Regatta Campaign</p>
+          <p class="hero-copy" data-text="heroCopy">
+            Focused on disciplined execution, measurable progression, and long-term development
+            toward top-tier international competition.
+          </p>
+          <div class="cta-row">
+            <a href="#about" class="btn btn-primary">About</a>
+            <a href="#results" class="btn btn-secondary">Results</a>
+            <a href="#sponsorship" class="btn btn-accent">Partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="container section">
+        <div class="section-head">
+          <h2>About</h2>
+          <p class="section-subtitle" data-text="aboutIntro">
+            Alexander Olsson is a Swedish sailor with a competitive 29er background, built through
+            structured training, international fleet racing, and a high-performance mindset.
+          </p>
+        </div>
+        <div class="grid two-col">
+          <article class="card panel">
+            <h3 data-text="aboutCardTitle">Performance Profile</h3>
+            <p data-text="aboutCardBody">
+              Alexander combines technical sailing sessions, physical conditioning, and detailed
+              race debriefs to improve consistency in starts, speed, and tactical decisions under
+              pressure.
+            </p>
+          </article>
+          <article class="card panel media-panel">
+            <img id="profile-image" class="profile-image" src="./images/profile.svg" alt="Alexander portrait" loading="lazy" />
+            <p class="img-label" data-text="profileLabel">Athlete portrait / campaign image</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="results" class="section section-dark">
+        <div class="container">
+          <div class="section-head section-head-light">
+            <h2>Results &amp; Key Achievements</h2>
+            <p class="section-subtitle" data-text="resultsIntro">
+              A polished competitive record designed for easy updates as campaigns progress.
+            </p>
+          </div>
+          <div class="results-timeline" id="achievements-grid"></div>
+        </div>
+      </section>
+
+      <section id="journey" class="container section section-border">
+        <div class="section-head">
+          <h2>Sailing Journey</h2>
+          <p class="section-subtitle" data-text="journeyIntro">
+            Every season is planned around incremental gains, disciplined routines, and long-term
+            elite performance goals.
+          </p>
+        </div>
+        <div class="grid four-col" id="milestones-grid"></div>
+      </section>
+
+      <section id="gallery" class="container section section-border">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p class="section-subtitle" data-text="galleryIntro">A visual overview of racing, training, and campaign moments.</p>
+        </div>
+        <div class="grid gallery-grid" id="gallery-grid"></div>
+      </section>
+
+      <section id="sponsorship" class="container section section-border">
+        <div class="sponsor-shell">
+          <div>
+            <p class="eyebrow">Collaborations</p>
+            <h2>Sponsorship &amp; Media</h2>
+            <p class="section-subtitle" data-text="sponsorIntro">
+              Open to partnerships with premium brands, performance-driven campaigns, and selected
+              media opportunities aligned with elite sailing.
+            </p>
+          </div>
+          <div class="grid two-col sponsor-grid">
+            <article class="card panel">
+              <h3>Sponsorship Inquiries</h3>
+              <p>Brand partnerships, campaign activations, and long-term athlete support.</p>
+              <a class="text-link" data-text="sponsorEmail" data-href="sponsorEmailLink" href="mailto:partners@alexanderolsson.com">partners@alexanderolsson.com</a>
+            </article>
+            <article class="card panel">
+              <h3>Media &amp; Press</h3>
+              <p>Interviews, event features, and editorial collaboration requests.</p>
+              <a class="text-link" data-text="mediaEmail" data-href="mediaEmailLink" href="mailto:media@alexanderolsson.com">media@alexanderolsson.com</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="container section section-border">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="section-subtitle" data-text="contactIntro">Direct channels for team communication and social updates.</p>
+        </div>
+        <div class="contact-links">
+          <a data-text="contactEmail" data-href="contactEmailLink" href="mailto:alexander@example.com">Email: alexander@example.com</a>
+          <a data-text="contactInstagram" data-href="instagramLink" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram: @alexanderolsson</a>
+          <a href="#sponsorship">Sponsorship desk</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> <span data-text="footerName">Alexander Olsson</span>. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#results">Results</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>

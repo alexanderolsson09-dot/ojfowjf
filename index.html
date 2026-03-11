@@ -5,22 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Alexander Olsson — Swedish elite sailor with international 29er regatta experience and a high-performance mindset."
+      content="Alexander Olsson — Swedish elite sailor with international 29er class regatta experience."
     />
     <title>Alexander Olsson | Elite Sailor</title>
-    <link rel="stylesheet" href="./style.css" />
+    <style>
+      :root {
+        --navy-950: #081422;
+        --navy-900: #0b1a2b;
+        --navy-800: #10233a;
+        --sea-500: #3f87ac;
+        --slate-50: #f7fafc;
+        --slate-100: #eef3f8;
+        --slate-200: #d9e3ee;
+        --slate-500: #6f8094;
+        --slate-600: #4d6076;
+        --slate-700: #2c3e53;
+        --white: #fff;
+        --shadow-soft: 0 20px 60px -35px rgba(8, 20, 34, 0.45);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, "Avenir Next", "Segoe UI", Roboto, sans-serif;
+        color: var(--slate-700);
+        background: linear-gradient(180deg, var(--slate-50) 0%, #f0f4f8 100%);
+      }
+      .container { width: min(1140px, 100% - 2.4rem); margin-inline: auto; }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 80;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(8, 20, 34, 0.45);
+        backdrop-filter: blur(10px);
+      }
+      .nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+      .brand { color: var(--white); text-decoration: none; letter-spacing: 0.2em; font-size: 0.75rem; font-weight: 600; }
+      .menu-toggle { display: none; border: 0; background: transparent; color: var(--white); font-size: 1.5rem; }
+      .nav-links { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
+      .nav-links a { text-decoration: none; color: rgba(255, 255, 255, 0.86); font-size: 0.88rem; }
+
+      .hero-full { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
+      .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(108deg, rgba(8, 20, 34, 0.82) 18%, rgba(8, 20, 34, 0.45) 56%, rgba(8, 20, 34, 0.7) 100%);
+      }
+      .hero-content { position: relative; color: var(--white); padding-top: 5rem; }
+      .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.24em; font-weight: 600; font-size: 0.72rem; color: #b9d4e5; }
+      h1 { margin: 0.9rem 0 0; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.06; letter-spacing: -0.02em; }
+      .hero-title { margin: 1rem 0 0; font-size: clamp(1.05rem, 2vw, 1.35rem); color: rgba(255, 255, 255, 0.9); }
+      .hero-copy { max-width: 620px; margin-top: 1.2rem; line-height: 1.75; color: rgba(255, 255, 255, 0.82); }
+      .cta-row { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+      .btn {
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.82rem 1.45rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid transparent;
+      }
+      .btn-primary { background: var(--white); color: var(--navy-900); }
+      .btn-secondary { border-color: rgba(255, 255, 255, 0.45); color: var(--white); background: rgba(255, 255, 255, 0.08); }
+      .btn-accent { border-color: rgba(185, 212, 229, 0.5); color: #d3e6f2; background: rgba(63, 135, 172, 0.22); }
+
+      .section { padding: 5.5rem 0; }
+      .section-border { border-top: 1px solid var(--slate-200); }
+      .section-dark { background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%); color: var(--white); }
+      .section-head { max-width: 760px; }
+      .section-head-light h2, .section-head-light .section-subtitle { color: var(--white); }
+      h2 { margin: 0; font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.01em; color: var(--navy-900); }
+      .section-subtitle { margin-top: 0.9rem; color: var(--slate-600); line-height: 1.75; }
+
+      .grid { margin-top: 2rem; display: grid; gap: 1rem; }
+      .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .three-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .four-col { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+      .card { background: var(--white); border: 1px solid var(--slate-200); border-radius: 1.2rem; box-shadow: var(--shadow-soft); }
+      .panel { padding: 1.5rem; }
+      .panel h3 { margin: 0; color: var(--navy-900); }
+      .panel p { color: var(--slate-600); line-height: 1.7; }
+
+      .profile-image,
+      .class-image,
+      .gallery-img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0.9rem;
+        background: linear-gradient(135deg, #dbe6f0, #f6faff);
+        display: block;
+      }
+      .profile-image, .class-image { aspect-ratio: 16 / 10; }
+      .img-label { margin: 0.8rem 0 0; font-size: 0.74rem; color: var(--slate-500); text-transform: uppercase; letter-spacing: 0.15em; }
+
+      .results-timeline { margin-top: 2rem; display: grid; gap: 1rem; }
+      .achievement-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 1.1rem;
+        padding: 1.35rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .achievement-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #8fc2dd, #5b9fc5);
+      }
+      .result-topline { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+      .result-year { color: #b9d4e5; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+      .result-tag { font-size: 0.72rem; color: #dcecf6; border: 1px solid rgba(220, 236, 246, 0.35); border-radius: 999px; padding: 0.2rem 0.65rem; }
+      .achievement-card h3 { margin: 0.5rem 0 0; color: var(--white); }
+      .achievement-card p { margin: 0.5rem 0 0; color: rgba(255, 255, 255, 0.8); line-height: 1.65; }
+
+      .stat { text-align: center; padding: 1.4rem; }
+      .stat-value { margin: 0; font-size: 1.9rem; color: var(--navy-900); font-weight: 700; }
+      .stat-label { margin: 0.5rem 0 0; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--slate-500); }
+
+      .gallery-item { overflow: hidden; }
+      .gallery-img { aspect-ratio: 4 / 3; transition: transform 280ms ease; }
+      .gallery-item:hover .gallery-img { transform: scale(1.04); }
+      .gallery-item figcaption { margin: 0; border-top: 1px solid var(--slate-100); padding: 0.75rem 0.95rem; color: var(--slate-500); font-size: 0.78rem; }
+
+      .sponsor-shell { background: linear-gradient(180deg, #fff 0%, #f5f9fd 100%); border: 1px solid var(--slate-200); border-radius: 1.4rem; box-shadow: var(--shadow-soft); padding: 2rem; }
+      .text-link { display: inline-block; margin-top: 0.4rem; color: var(--navy-800); text-decoration: none; font-weight: 600; }
+
+      .contact-links { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+      .contact-links a { text-decoration: none; color: var(--slate-700); border: 1px solid var(--slate-200); background: var(--white); border-radius: 999px; padding: 0.6rem 1rem; }
+
+      .site-footer { border-top: 1px solid var(--slate-200); background: #fff; }
+      .footer-inner { padding: 1.8rem 0; display: flex; justify-content: space-between; gap: 0.8rem; color: var(--slate-500); font-size: 0.8rem; }
+      .footer-links { display: flex; gap: 1rem; }
+      .footer-links a { text-decoration: none; color: var(--slate-600); }
+
+      .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.9s ease forwards; }
+      @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+      @media (max-width: 900px) {
+        .three-col,
+        .four-col,
+        .two-col { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 760px) {
+        .menu-toggle { display: block; }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 64px;
+          left: 1rem;
+          right: 1rem;
+          background: rgba(8, 20, 34, 0.95);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          border-radius: 0.9rem;
+          padding: 0.9rem;
+        }
+        .nav-links.open { display: flex; }
+        .hero-content { padding-top: 6.5rem; }
+        .contact-links { flex-direction: column; }
+        .footer-inner { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
       <nav class="container nav">
-        <a href="#top" class="brand" data-text="brand">ALEXANDER OLSSON</a>
+        <a href="#top" class="brand">ALEXANDER OLSSON</a>
         <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#results">Results</a></li>
           <li><a href="#journey">Journey</a></li>
+          <li><a href="#class29er">29er Class</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#sponsorship">Sponsorship</a></li>
+          <li><a href="#partners">Partners</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -29,19 +195,19 @@
     <main id="top">
       <section class="hero-full">
         <div class="hero-overlay"></div>
-        <img class="hero-image" id="hero-image" src="./images/hero-sailing.svg" alt="Alexander racing at sea" loading="eager" />
+        <img class="hero-image" src="./images/top-hero.jpg" alt="Alexander racing at sea" loading="eager" onerror="this.src='./images/hero-sailing.svg'" />
         <div class="container hero-content fade-up">
-          <p class="eyebrow" data-text="heroEyebrow">Swedish Elite Sailing Portfolio</p>
-          <h1 data-text="heroName">Alexander Olsson</h1>
-          <p class="hero-title" data-text="heroTitle">Competitive 29er Sailor · International Regatta Campaign</p>
-          <p class="hero-copy" data-text="heroCopy">
+          <p class="eyebrow">Swedish Elite Sailing Portfolio</p>
+          <h1>Alexander Olsson</h1>
+          <p class="hero-title">Competitive 29er Sailor · International Regatta Campaign</p>
+          <p class="hero-copy">
             Focused on disciplined execution, measurable progression, and long-term development
             toward top-tier international competition.
           </p>
           <div class="cta-row">
             <a href="#about" class="btn btn-primary">About</a>
             <a href="#results" class="btn btn-secondary">Results</a>
-            <a href="#sponsorship" class="btn btn-accent">Partner</a>
+            <a href="#partners" class="btn btn-accent">Partner</a>
           </div>
         </div>
       </section>
@@ -49,23 +215,23 @@
       <section id="about" class="container section">
         <div class="section-head">
           <h2>About</h2>
-          <p class="section-subtitle" data-text="aboutIntro">
+          <p class="section-subtitle">
             Alexander Olsson is a Swedish sailor with a competitive 29er background, built through
             structured training, international fleet racing, and a high-performance mindset.
           </p>
         </div>
         <div class="grid two-col">
           <article class="card panel">
-            <h3 data-text="aboutCardTitle">Performance Profile</h3>
-            <p data-text="aboutCardBody">
+            <h3>Performance Profile</h3>
+            <p>
               Alexander combines technical sailing sessions, physical conditioning, and detailed
               race debriefs to improve consistency in starts, speed, and tactical decisions under
               pressure.
             </p>
           </article>
-          <article class="card panel media-panel">
-            <img id="profile-image" class="profile-image" src="./images/profile.svg" alt="Alexander portrait" loading="lazy" />
-            <p class="img-label" data-text="profileLabel">Athlete portrait / campaign image</p>
+          <article class="card panel">
+            <img class="profile-image" src="./images/profile.svg" alt="Alexander portrait" loading="lazy" />
+            <p class="img-label">Athlete portrait / campaign image</p>
           </article>
         </div>
       </section>
@@ -74,9 +240,7 @@
         <div class="container">
           <div class="section-head section-head-light">
             <h2>Results &amp; Key Achievements</h2>
-            <p class="section-subtitle" data-text="resultsIntro">
-              A polished competitive record designed for easy updates as campaigns progress.
-            </p>
+            <p class="section-subtitle">A polished competitive record designed for easy updates as campaigns progress.</p>
           </div>
           <div class="results-timeline" id="achievements-grid"></div>
         </div>
@@ -85,7 +249,7 @@
       <section id="journey" class="container section section-border">
         <div class="section-head">
           <h2>Sailing Journey</h2>
-          <p class="section-subtitle" data-text="journeyIntro">
+          <p class="section-subtitle">
             Every season is planned around incremental gains, disciplined routines, and long-term
             elite performance goals.
           </p>
@@ -93,34 +257,57 @@
         <div class="grid four-col" id="milestones-grid"></div>
       </section>
 
+      <section id="class29er" class="container section section-border">
+        <div class="section-head">
+          <h2>29er Class</h2>
+          <p class="section-subtitle">
+            The 29er is a fast, technical skiff class that demands precision, teamwork, and tactical
+            discipline — central qualities in Alexander’s development pathway.
+          </p>
+        </div>
+        <div class="grid two-col">
+          <article class="card panel">
+            <h3>Why 29er</h3>
+            <p>
+              High-speed boat handling, dynamic conditions, and intense fleet racing make the class
+              an ideal foundation for long-term elite performance.
+            </p>
+          </article>
+          <article class="card panel">
+            <img class="class-image" src="./images/gallery-3.svg" alt="29er class training" loading="lazy" />
+            <p class="img-label">29er class training environment</p>
+          </article>
+        </div>
+      </section>
+
       <section id="gallery" class="container section section-border">
         <div class="section-head">
           <h2>Gallery</h2>
-          <p class="section-subtitle" data-text="galleryIntro">A visual overview of racing, training, and campaign moments.</p>
+          <p class="section-subtitle">A visual overview of racing, training, and campaign moments.</p>
         </div>
-        <div class="grid gallery-grid" id="gallery-grid"></div>
+        <div class="grid three-col" id="gallery-grid"></div>
       </section>
 
-      <section id="sponsorship" class="container section section-border">
+      <section id="partners" class="container section section-border">
         <div class="sponsor-shell">
           <div>
             <p class="eyebrow">Collaborations</p>
-            <h2>Sponsorship &amp; Media</h2>
-            <p class="section-subtitle" data-text="sponsorIntro">
+            <h2>Partners &amp; Sponsorship</h2>
+            <p class="section-subtitle">
               Open to partnerships with premium brands, performance-driven campaigns, and selected
               media opportunities aligned with elite sailing.
             </p>
           </div>
-          <div class="grid two-col sponsor-grid">
+          <div class="grid two-col">
             <article class="card panel">
               <h3>Sponsorship Inquiries</h3>
               <p>Brand partnerships, campaign activations, and long-term athlete support.</p>
-              <a class="text-link" data-text="sponsorEmail" data-href="sponsorEmailLink" href="mailto:partners@alexanderolsson.com">partners@alexanderolsson.com</a>
+              <a class="text-link" href="mailto:partners@alexanderolsson.com">partners@alexanderolsson.com</a>
             </article>
             <article class="card panel">
               <h3>Media &amp; Press</h3>
               <p>Interviews, event features, and editorial collaboration requests.</p>
-              <a class="text-link" data-text="mediaEmail" data-href="mediaEmailLink" href="mailto:media@alexanderolsson.com">media@alexanderolsson.com</a>
+              <a class="text-link" href="mailto:media@alexanderolsson.com">media@alexanderolsson.com</a>
             </article>
           </div>
         </div>
@@ -129,19 +316,19 @@
       <section id="contact" class="container section section-border">
         <div class="section-head">
           <h2>Contact</h2>
-          <p class="section-subtitle" data-text="contactIntro">Direct channels for team communication and social updates.</p>
+          <p class="section-subtitle">Direct channels for team communication and social updates.</p>
         </div>
         <div class="contact-links">
-          <a data-text="contactEmail" data-href="contactEmailLink" href="mailto:alexander@example.com">Email: alexander@example.com</a>
-          <a data-text="contactInstagram" data-href="instagramLink" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram: @alexanderolsson</a>
-          <a href="#sponsorship">Sponsorship desk</a>
+          <a href="mailto:alexander@example.com">Email: alexander@example.com</a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram: @alexanderolsson</a>
+          <a href="#partners">Sponsorship desk</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> <span data-text="footerName">Alexander Olsson</span>. All rights reserved.</p>
+        <p>© <span id="year"></span> Alexander Olsson. All rights reserved.</p>
         <div class="footer-links">
           <a href="#about">About</a>
           <a href="#results">Results</a>
@@ -150,6 +337,116 @@
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <script>
+      const achievements = [
+        {
+          year: '2025',
+          title: 'Top Fleet International Regatta Finish',
+          tag: 'International',
+          detail:
+            'Delivered a season-best result in a high-level 29er fleet through disciplined race management and improved consistency across all series days.',
+        },
+        {
+          year: '2024',
+          title: 'Swedish Youth Championship Medal Position',
+          tag: 'National',
+          detail:
+            'Secured a medal-place campaign with strong starts, tactical composure, and reliable closing races under pressure.',
+        },
+        {
+          year: '2023',
+          title: 'Scandinavian Circuit Performance Progression',
+          tag: 'Circuit',
+          detail:
+            'Built international racing depth with measurable gains in speed profile, mark-rounding efficiency, and fleet positioning.',
+        },
+      ];
+
+      const milestones = [
+        { label: 'Years in Competition', value: '8+' },
+        { label: 'International Regattas', value: '20+' },
+        { label: 'Training Days / Year', value: '200+' },
+        { label: 'Long-Term Goal', value: 'World-Class Level' },
+      ];
+
+      const galleryItems = [
+        { caption: 'High-Pressure Race Starts', image: './images/gallery-1.svg' },
+        { caption: 'Downwind Performance in Breeze', image: './images/gallery-2.svg' },
+        { caption: 'Training Camp in Sweden', image: './images/gallery-3.svg' },
+        { caption: 'International Venue Preparation', image: './images/gallery-4.svg' },
+        { caption: 'Boat Handling & Teamwork', image: './images/gallery-5.svg' },
+        { caption: 'Post-Race Analysis Sessions', image: './images/gallery-6.svg' },
+      ];
+
+      function renderAchievements() {
+        const grid = document.getElementById('achievements-grid');
+        grid.innerHTML = achievements
+          .map(
+            (item) => `
+            <article class="achievement-card">
+              <div class="result-topline">
+                <span class="result-year">${item.year}</span>
+                <span class="result-tag">${item.tag}</span>
+              </div>
+              <h3>${item.title}</h3>
+              <p>${item.detail}</p>
+            </article>
+          `,
+          )
+          .join('');
+      }
+
+      function renderMilestones() {
+        const grid = document.getElementById('milestones-grid');
+        grid.innerHTML = milestones
+          .map(
+            (item) => `
+            <article class="card stat">
+              <p class="stat-value">${item.value}</p>
+              <p class="stat-label">${item.label}</p>
+            </article>
+          `,
+          )
+          .join('');
+      }
+
+      function renderGallery() {
+        const grid = document.getElementById('gallery-grid');
+        grid.innerHTML = galleryItems
+          .map(
+            (item) => `
+            <figure class="card gallery-item">
+              <img class="gallery-img" src="${item.image}" alt="${item.caption}" loading="lazy" />
+              <figcaption>${item.caption}</figcaption>
+            </figure>
+          `,
+          )
+          .join('');
+      }
+
+      function setupMenu() {
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav-links');
+        if (!toggle || !nav) return;
+
+        toggle.addEventListener('click', () => {
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        nav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+      renderAchievements();
+      renderMilestones();
+      renderGallery();
+      setupMenu();
+    </script>
   </body>
 </html>

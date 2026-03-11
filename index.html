@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Alexander Olsson — Competitive 29er sailor focused on high-performance development and international regatta competition."
+      content="Alexander Olsson — Swedish elite 29er sailor, European medalist, and international high-performance campaign athlete representing KSSS."
     />
     <title>Alexander Olsson | Premium Sailing Portfolio</title>
     <style>
@@ -25,8 +25,14 @@
         --shadow-soft: 0 20px 50px -30px rgba(7, 19, 32, 0.45);
       }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         font-family: Inter, Avenir Next, Segoe UI, Roboto, sans-serif;
@@ -90,7 +96,12 @@
         display: flex;
         align-items: center;
         background-image:
-          linear-gradient(118deg, rgba(7, 19, 32, 0.78) 15%, rgba(7, 19, 32, 0.45) 58%, rgba(7, 19, 32, 0.7) 100%),
+          linear-gradient(
+            118deg,
+            rgba(7, 19, 32, 0.78) 15%,
+            rgba(7, 19, 32, 0.45) 58%,
+            rgba(7, 19, 32, 0.7) 100%
+          ),
           url('./images/IMG_3951.JPG');
         background-size: cover;
         background-position: center;
@@ -99,7 +110,7 @@
 
       .hero-box {
         margin-top: 2.5rem;
-        max-width: 760px;
+        max-width: 780px;
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.28);
         border-radius: 1.5rem;
@@ -133,7 +144,7 @@
 
       .hero-copy {
         margin-top: 1rem;
-        max-width: 60ch;
+        max-width: 62ch;
         color: rgba(255, 255, 255, 0.85);
         line-height: 1.75;
       }
@@ -154,49 +165,78 @@
         border: 1px solid transparent;
       }
 
-      .btn-light { background: var(--white); color: var(--navy-900); }
+      .btn-light {
+        background: var(--white);
+        color: var(--navy-900);
+      }
+
       .btn-ghost {
         color: var(--white);
         border-color: rgba(255, 255, 255, 0.45);
         background: rgba(255, 255, 255, 0.08);
       }
+
       .btn-accent {
         color: #d9eaf6;
         border-color: rgba(217, 234, 246, 0.45);
         background: rgba(63, 111, 147, 0.35);
       }
 
-      section { padding: 5.2rem 0; }
-      .section-border { border-top: 1px solid var(--slate-200); }
+      section {
+        padding: 5.2rem 0;
+      }
+
+      .section-border {
+        border-top: 1px solid var(--slate-200);
+      }
+
       .section-dark {
         background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
         color: var(--white);
       }
 
-      .section-head { max-width: 760px; }
+      .section-head {
+        max-width: 760px;
+      }
+
       h2 {
         margin: 0;
         color: var(--navy-900);
         font-size: clamp(1.9rem, 4vw, 2.7rem);
         letter-spacing: -0.01em;
       }
-      .section-dark h2 { color: var(--white); }
+
+      .section-dark h2 {
+        color: var(--white);
+      }
 
       .section-subtitle {
         margin: 0.9rem 0 0;
         color: var(--slate-500);
         line-height: 1.75;
       }
-      .section-dark .section-subtitle { color: rgba(255, 255, 255, 0.8); }
+
+      .section-dark .section-subtitle {
+        color: rgba(255, 255, 255, 0.8);
+      }
 
       .grid {
         margin-top: 2rem;
         display: grid;
         gap: 1rem;
       }
-      .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .three-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .four-col { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+      .two-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .three-col {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .four-col {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
 
       .card {
         background: var(--white);
@@ -205,8 +245,16 @@
         box-shadow: var(--shadow-soft);
         padding: 1.4rem;
       }
-      .card h3 { margin-top: 0; color: var(--navy-900); }
-      .card p { color: var(--slate-500); line-height: 1.7; }
+
+      .card h3 {
+        margin-top: 0;
+        color: var(--navy-900);
+      }
+
+      .card p {
+        color: var(--slate-500);
+        line-height: 1.7;
+      }
 
       .results-card {
         background: rgba(255, 255, 255, 0.06);
@@ -216,6 +264,7 @@
         position: relative;
         overflow: hidden;
       }
+
       .results-card::before {
         content: '';
         position: absolute;
@@ -225,21 +274,36 @@
         width: 3px;
         background: linear-gradient(180deg, #9dc2db, #4f83a8);
       }
+
       .results-year {
         color: #c7ddec;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         font-size: 0.78rem;
       }
-      .results-card h3 { margin: 0.5rem 0 0; color: var(--white); font-size: 1.05rem; }
-      .results-card p { margin: 0.5rem 0 0; color: rgba(255, 255, 255, 0.8); }
+
+      .results-card h3 {
+        margin: 0.5rem 0 0;
+        color: var(--white);
+        font-size: 1.05rem;
+      }
+
+      .results-card p {
+        margin: 0.5rem 0 0;
+        color: rgba(255, 255, 255, 0.8);
+      }
 
       .timeline {
         margin-top: 2rem;
         border-left: 2px solid var(--slate-200);
         padding-left: 1.2rem;
       }
-      .timeline-item { position: relative; padding: 0 0 1.2rem 0.4rem; }
+
+      .timeline-item {
+        position: relative;
+        padding: 0 0 1.2rem 0.4rem;
+      }
+
       .timeline-item::before {
         content: '';
         position: absolute;
@@ -250,24 +314,41 @@
         border-radius: 999px;
         background: var(--steel-500);
       }
-      .timeline-year { font-size: 0.78rem; color: var(--steel-600); text-transform: uppercase; letter-spacing: 0.1em; }
-      .timeline-item h3 { margin: 0.25rem 0 0; color: var(--navy-900); }
-      .timeline-item p { margin: 0.4rem 0 0; color: var(--slate-500); }
+
+      .timeline-year {
+        font-size: 0.78rem;
+        color: var(--steel-600);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .timeline-item h3 {
+        margin: 0.25rem 0 0;
+        color: var(--navy-900);
+      }
+
+      .timeline-item p {
+        margin: 0.4rem 0 0;
+        color: var(--slate-500);
+      }
 
       .stats-band {
         background: linear-gradient(90deg, var(--navy-900), var(--navy-800));
         color: var(--white);
         padding: 2rem 0;
       }
+
       .stat {
         text-align: center;
         padding: 0.8rem;
       }
+
       .stat strong {
         display: block;
-        font-size: 1.55rem;
+        font-size: 1.1rem;
         font-weight: 700;
       }
+
       .stat span {
         display: block;
         margin-top: 0.3rem;
@@ -277,7 +358,11 @@
         color: rgba(255, 255, 255, 0.8);
       }
 
-      .gallery-item { overflow: hidden; padding: 0; }
+      .gallery-item {
+        overflow: hidden;
+        padding: 0;
+      }
+
       .gallery-item img {
         width: 100%;
         aspect-ratio: 4 / 3;
@@ -285,7 +370,11 @@
         display: block;
         transition: transform 260ms ease;
       }
-      .gallery-item:hover img { transform: scale(1.04); }
+
+      .gallery-item:hover img {
+        transform: scale(1.04);
+      }
+
       .gallery-item figcaption {
         margin: 0;
         padding: 0.8rem 1rem;
@@ -306,6 +395,10 @@
         background: #fbfdff;
       }
 
+      .honour-card {
+        border-left: 3px solid var(--steel-500);
+      }
+
       .contact-shell {
         background: linear-gradient(180deg, #fff 0%, #f5f9fd 100%);
         border: 1px solid var(--slate-200);
@@ -313,12 +406,14 @@
         box-shadow: var(--shadow-soft);
         padding: 1.8rem;
       }
+
       .contact-links {
         margin-top: 1rem;
         display: flex;
         flex-wrap: wrap;
         gap: 0.7rem;
       }
+
       .contact-chip {
         text-decoration: none;
         color: var(--slate-700);
@@ -340,6 +435,7 @@
         transform: translateY(20px);
         transition: opacity 600ms ease, transform 600ms ease;
       }
+
       .reveal.show {
         opacity: 1;
         transform: translateY(0);
@@ -348,11 +444,16 @@
       @media (max-width: 920px) {
         .two-col,
         .three-col,
-        .four-col { grid-template-columns: 1fr; }
+        .four-col {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 780px) {
-        .menu-toggle { display: block; }
+        .menu-toggle {
+          display: block;
+        }
+
         .nav-links {
           display: none;
           flex-direction: column;
@@ -365,8 +466,14 @@
           border-radius: 0.95rem;
           padding: 0.9rem;
         }
-        .nav-links.open { display: flex; }
-        .hero-box { padding: 1.4rem; }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .hero-box {
+          padding: 1.4rem;
+        }
       }
     </style>
   </head>
@@ -378,8 +485,10 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#results">Results</a></li>
+          <li><a href="#career">Career</a></li>
           <li><a href="#journey">Journey</a></li>
           <li><a href="#class29er">29er Class</a></li>
+          <li><a href="#highlights">Highlights</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#partners">Partners</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -393,11 +502,11 @@
           <div class="hero-box reveal">
             <p class="eyebrow">Elite Sailing Portfolio</p>
             <h1>Alexander Olsson</h1>
-            <p class="hero-subtitle">Competitive 29er Sailor · International Regatta Campaign</p>
+            <p class="hero-subtitle">Swedish Elite Sailor · 29er Campaign · International Medalist</p>
             <p class="hero-copy">
-              A Swedish performance-driven sailor focused on disciplined training, measurable
-              progression, and long-term development toward the highest level of international
-              competition.
+              Alexander competes at international level in the 29er class with a campaign defined by
+              discipline, structure, and long-term elite development. His focus is consistent
+              high-performance execution in demanding fleet racing environments.
             </p>
             <div class="cta-row">
               <a class="btn btn-light" href="#about">About</a>
@@ -412,24 +521,27 @@
         <div class="section-head">
           <h2>About</h2>
           <p class="section-subtitle">
-            Alexander Olsson is a Swedish competitive sailor with a clear high-performance mindset.
-            His campaign is built on structure, discipline, technical precision, and steady
-            progression toward long-term international success.
+            Alexander Olsson is one of Sweden’s most accomplished junior sailors, competing
+            internationally in the 29er class and representing KSSS – Royal Swedish Yacht Club. He
+            competed in the National Team Junior and National Team Youth categories and belonged to
+            Svenska Seglarförbundet during high school.
           </p>
         </div>
         <div class="grid two-col">
           <article class="card">
-            <h3>Training Philosophy</h3>
+            <h3>Elite Development Background</h3>
             <p>
-              Daily work combines on-water execution, physical preparation, and tactical review.
-              Every block is designed to strengthen consistency in starts, speed, and decision-making.
+              At age 16, Alexander moved away from home to attend Motala National Elite Sports High
+              School (RIG), combining studies with elite sailing. His profile is built on resilience,
+              coachability, and long-term dedication to high-performance sport.
             </p>
           </article>
           <article class="card">
-            <h3>Long-Term Ambition</h3>
+            <h3>Training & Competitive Commitment</h3>
             <p>
-              The objective is sustained elite development: competing in stronger international fleets,
-              refining race performance, and building a durable pathway to top-level sailing.
+              Sailing has been central throughout high school, with roughly 25–30 hours per week of
+              training and competition. Since age 14, he has trained and raced internationally in
+              countries including Italy, Denmark, and Germany.
             </p>
           </article>
         </div>
@@ -438,55 +550,95 @@
       <section id="results" class="section-dark reveal">
         <div class="container">
           <div class="section-head">
-            <h2>Results</h2>
-            <p class="section-subtitle">Selected achievements and campaign highlights.</p>
+            <h2>Selected Results</h2>
+            <p class="section-subtitle">
+              Key international and national achievements from Alexander’s 29er campaign.
+            </p>
           </div>
           <div class="grid two-col" id="results-grid"></div>
         </div>
+      </section>
+
+      <section id="career" class="container section-border reveal">
+        <div class="section-head">
+          <h2>Career Summary</h2>
+          <p class="section-subtitle">
+            Year-by-year performance progression across European and Swedish events.
+          </p>
+        </div>
+        <div class="timeline" id="career-timeline"></div>
       </section>
 
       <section id="journey" class="container section-border reveal">
         <div class="section-head">
           <h2>Sailing Journey</h2>
           <p class="section-subtitle">
-            A progression from early foundation work to committed international 29er competition.
+            From no family sailing background to world-level junior performance through long-term
+            discipline.
           </p>
         </div>
-        <div class="timeline" id="journey-timeline"></div>
+        <div class="grid two-col">
+          <article class="card">
+            <h3>Built from Dedication</h3>
+            <p>
+              With no sailing tradition in his family, Alexander developed through consistent hard
+              work, coach-led progression, and a strong personal commitment to performance.
+            </p>
+          </article>
+          <article class="card">
+            <h3>International Pathway</h3>
+            <p>
+              Regular international camps and regattas from age 14, plus sustained 25–30 hour weekly
+              commitment alongside school, enabled his progression to world-class junior level.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section id="class29er" class="container section-border reveal">
         <div class="section-head">
           <h2>29er Class</h2>
           <p class="section-subtitle">
-            The 29er is a high-speed skiff class that demands athleticism, precision, and teamwork.
-            It is a proven high-performance development platform for future elite sailors.
+            The 29er is a high-performance two-person skiff that demands advanced boat handling,
+            speed, physical endurance, and close coordination between helm and crew. It is one of
+            the most competitive youth development classes in sailing and a strong pathway toward
+            elite and Olympic-level performance.
           </p>
-        </div>
-        <div class="grid two-col">
-          <article class="card">
-            <h3>Speed & Athleticism</h3>
-            <p>
-              Fast transitions and technical boat handling require physical capacity, timing, and
-              confidence under pressure.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Teamwork & Tactics</h3>
-            <p>
-              Competitive performance depends on coordinated communication, tactical clarity, and
-              race-by-race adaptability in varied conditions.
-            </p>
-          </article>
         </div>
       </section>
 
-      <section class="stats-band reveal">
+      <section id="highlights" class="stats-band reveal">
         <div class="container grid four-col">
-          <div class="stat"><strong>International</strong><span>Racing Exposure</span></div>
-          <div class="stat"><strong>High-Performance</strong><span>Daily Structure</span></div>
-          <div class="stat"><strong>Elite Pathway</strong><span>29er Development</span></div>
-          <div class="stat"><strong>Long-Term</strong><span>Competitive Vision</span></div>
+          <div class="stat"><strong>European Champion</strong><span>29er Campaign</span></div>
+          <div class="stat"><strong>Eurocup Winner</strong><span>Kiel & Series Results</span></div>
+          <div class="stat"><strong>Swedish GP Winner</strong><span>Series Champion 2024</span></div>
+          <div class="stat"><strong>KSSS / RIG Motala</strong><span>National Team Junior / Youth</span></div>
+        </div>
+      </section>
+
+      <section id="honours" class="container section-border reveal">
+        <div class="section-head">
+          <h2>Honours & Recognition</h2>
+          <p class="section-subtitle">
+            Recognition within Swedish sailing for commitment, progression, and competitive
+            excellence.
+          </p>
+        </div>
+        <div class="grid two-col">
+          <article class="card honour-card">
+            <h3>KSSS Helly Hansen Youth Prize</h3>
+            <p>
+              Finalist / nominated, reflecting strong performance trajectory and recognized potential
+              within Swedish youth sailing.
+            </p>
+          </article>
+          <article class="card honour-card">
+            <h3>Gunnar Ekdahl’s Youth Scholarship</h3>
+            <p>
+              Awarded in recognition of sustained dedication, sporting standards, and long-term
+              commitment to elite development.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -501,7 +653,11 @@
       <section id="partners" class="container section-border reveal">
         <div class="section-head">
           <h2>Partners / Sponsors</h2>
-          <p class="section-subtitle">Professional sponsor visibility section ready for official logos.</p>
+          <p class="section-subtitle">
+            Alexander offers a strong combination of elite performance, long-term potential,
+            disciplined training, and a professional public profile — an attractive platform for
+            sponsors and collaborators.
+          </p>
         </div>
         <div class="grid four-col">
           <div class="logo-box">Partner Logo</div>
@@ -516,7 +672,8 @@
           <div class="section-head">
             <h2>Contact</h2>
             <p class="section-subtitle">
-              For collaborations, sponsor inquiries, and media opportunities, feel free to connect.
+              For sponsorships, collaborations, media inquiries, or partnership opportunities, please
+              get in touch.
             </p>
           </div>
           <div class="contact-links">
@@ -536,18 +693,47 @@
     </footer>
 
     <script>
-      const results = [
-        { year: '2025', title: 'European Championships', detail: 'Gold Medal' },
-        { year: '2025', title: '29er EuroCup', detail: 'Winner' },
-        { year: '2024', title: 'Swedish Championships', detail: 'Gold / Silver / Bronze' },
-        { year: '2024', title: 'Swedish Grand Prix Series', detail: 'Winner' },
+      const selectedResults = [
+        {
+          year: '2025',
+          title: 'European Championship Gold',
+          detail: 'Over 18 Champion, ranked #1 in age group, and 22nd overall out of 251 boats.',
+        },
+        {
+          year: '2025',
+          title: 'Eurocup Kiel Winner',
+          detail: '1st place Over 18 and 5th overall out of 75 in one of Europe’s strongest fleets.',
+        },
+        {
+          year: '2024',
+          title: 'Swedish Grand Prix Series Winner',
+          detail: 'Overall series winner in Sweden with consistent top-level event performances.',
+        },
+        {
+          year: '2023–2025',
+          title: 'Swedish Championship Medals',
+          detail: 'Gold (2024), Silver (2025), and Bronze (2023) across three consecutive seasons.',
+        },
       ];
 
-      const journey = [
-        { year: 'Early Years', title: 'Foundation in Sailing', detail: 'Built technical basics and race discipline through structured youth training.' },
-        { year: 'Development', title: 'National Competition', detail: 'Progressed through stronger fleets with consistent event-by-event performance gains.' },
-        { year: '29er Campaign', title: 'High-Performance Focus', detail: 'Specialized in the 29er class with dedicated physical and tactical preparation.' },
-        { year: 'International', title: 'Regatta Progression', detail: 'Competes internationally with long-term ambition to perform at the highest level.' },
+      const careerTimeline = [
+        {
+          year: '2025',
+          title: 'International Peak Season',
+          detail:
+            'European Championship Over 18: 1st · European Championship Overall: 22/251 · Eurocup Kiel Over 18: 1st · Eurocup Kiel Overall: 5/75 · Swedish Championship: 2nd · Stenungssund GP1: 1st · Eurocup GKSS: 4th · Lomma GP4: 3rd.',
+        },
+        {
+          year: '2024',
+          title: 'National Breakthrough',
+          detail:
+            'Winner of the Swedish Grand Prix series · Swedish Championship: 1st · Ölmanäs GP2: 1st · Eurocup GKSS: 5th · KSSS OCR: 3rd.',
+        },
+        {
+          year: '2023',
+          title: 'Podium Foundation',
+          detail: 'Swedish Championship: 3rd place and continued progression into elite junior fleets.',
+        },
       ];
 
       const gallery = [
@@ -561,34 +747,46 @@
 
       function renderResults() {
         const grid = document.getElementById('results-grid');
-        grid.innerHTML = results.map((item) => `
+        grid.innerHTML = selectedResults
+          .map(
+            (item) => `
           <article class="results-card">
             <div class="results-year">${item.year}</div>
             <h3>${item.title}</h3>
             <p>${item.detail}</p>
           </article>
-        `).join('');
+        `,
+          )
+          .join('');
       }
 
-      function renderJourney() {
-        const wrap = document.getElementById('journey-timeline');
-        wrap.innerHTML = journey.map((item) => `
+      function renderCareer() {
+        const wrap = document.getElementById('career-timeline');
+        wrap.innerHTML = careerTimeline
+          .map(
+            (item) => `
           <article class="timeline-item">
             <div class="timeline-year">${item.year}</div>
             <h3>${item.title}</h3>
             <p>${item.detail}</p>
           </article>
-        `).join('');
+        `,
+          )
+          .join('');
       }
 
       function renderGallery() {
         const grid = document.getElementById('gallery-grid');
-        grid.innerHTML = gallery.map((item) => `
+        grid.innerHTML = gallery
+          .map(
+            (item) => `
           <figure class="card gallery-item">
             <img src="${item.src}" alt="${item.caption}" loading="lazy" />
             <figcaption>${item.caption}</figcaption>
           </figure>
-        `).join('');
+        `,
+          )
+          .join('');
       }
 
       function setupMenu() {
@@ -624,7 +822,7 @@
 
       document.getElementById('year').textContent = new Date().getFullYear();
       renderResults();
-      renderJourney();
+      renderCareer();
       renderGallery();
       setupMenu();
       setupReveal();
